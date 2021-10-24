@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{REQUEST_URI} days
+RewriteRule ^(.*)$ https://nawin.com/days/$1 [R,L]
+RewriteRule api/$ SystemCore/api.php [L]
+RewriteRule api$ SystemCore/api.php [L]
+RewriteRule readableContent/policy/term/read$ publicContent/toc.php [L]
+RewriteRule readableContent/policy/privacy/read$ publicContent/privacy.php [L]
+RewriteRule readableContent/policy/cookie/read$ publicContent/cookie.php [L]
+RewriteRule readableContent/policy/disclaimer/read$ publicContent/disclaimer.php [L]
+RewriteRule readableContent/policy/returnrefund/read$ publicContent/returnrefund.php [L]
+RewriteRule readableContent/policy/eula/read$ publicContent/eula.php [L]
+RewriteRule readableContent/policy/read$ publicContent/policyList.php [L]
+RewriteRule system/help$ help.php [L]
+RewriteRule system/contact$ contact.php [L]
+RewriteRule main$ main.php [L]
+RewriteRule main!signin$ main.php?signin=true [L]
+RewriteRule main!signup$ main.php?signup=true [L]
+RewriteRule lobby$ lobby.php [L]
+RewriteRule users/([^/]*)$ systemCore/user.php?profile=$1 [L]
+RewriteRule users/([^/]*)/$ systemCore/user.php?profile=$1 [L]
+RewriteRule users/([^/]*)/check$ systemCore/user.php?profile=$1&check=true [L]
+RewriteRule users/([^/]*)/check/$ systemCore/user.php?profile=$1&check=true [L]
